@@ -10,6 +10,7 @@ All notable changes to this project will be documented in this file. See https:/
 
 ### Changed
 - Document binary installation in README
+- Make goreleaser create homebrew tap
 
 ## [1.0.2] - 2025-2-24
 ### Added
