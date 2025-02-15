@@ -24,9 +24,8 @@ go version go1.23.0 darwin/amd64
 ### **2. Install Describe Using `go install`**
 Run the following command to install `describe`:
 ```sh
-go install github.com/yourusername/describe@latest
+go install github.com/rodlaf/describe@latest
 ```
-> Replace `yourusername` with the actual GitHub username or repository location.
 
 This will install `describe` in Go’s **bin directory** (e.g., `$HOME/go/bin/describe`).
 
