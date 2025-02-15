@@ -1,6 +1,6 @@
 # Describe
 
-**Describe** is a command-line tool that scans a directory, excludes files based on `.describeignore`, and generates a structured Markdown file (`codebase.md`). It helps document projects efficiently by creating a tree structure and embedding file contents.
+**Describe** is a command-line tool that scans a directory, embeds file contents, and generates a structured Markdown file (`codebase.md`). It respects a `.describeignore` file, which follows the same format as `.gitignore`, allowing precise control over which files and directories are included. This makes it useful for chatbot integrations and AI-assisted workflows, ensuring only relevant content is extracted while keeping unnecessary files out of the output.
 
 ---
 
