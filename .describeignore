@@ -33,3 +33,7 @@ Thumbs.db
 
 # Describe
 codebase.md
+
+# Describe only
+.git/
+README.md

@@ -16,13 +16,15 @@ var (
 	outputFile string
 	ignoreFile string
 	inputDir   string
+	debug      bool
 )
 
 func init() {
 	flag.StringVar(&outputFile, "output", "codebase.md", "Output markdown file path")
 	flag.StringVar(&ignoreFile, "ignore", ".describeignore", "Ignore file path (in .gitignore format)")
+	flag.BoolVar(&debug, "debug", false, "Enable debug mode")
 	flag.Usage = func() {
-		fmt.Println("Usage: describe <input-directory> -output <file> -ignore <ignore-file>")
+		fmt.Println("Usage: describe <input-directory> -output <file> -ignore <ignore-file> -debug")
 		fmt.Println("\nGenerates a Markdown file documenting the directory structure and file contents.")
 		fmt.Println("\nOptions:")
 		flag.PrintDefaults()
@@ -38,6 +40,9 @@ func main() {
 		os.Exit(1)
 	}
 	inputDir = flag.Arg(0)
+
+	// Ensure `.describeignore` exists
+	ensureIgnoreFile(ignoreFile)
 
 	// Load ignore rules
 	ignoreMatcher := loadIgnoreFile(ignoreFile)
@@ -58,14 +63,33 @@ func main() {
 	fmt.Println("Markdown file generated:", outputFile)
 }
 
+// Ensures that the ignore file exists, creating it if necessary
+func ensureIgnoreFile(ignorePath string) {
+	if _, err := os.Stat(ignorePath); os.IsNotExist(err) {
+		if debug {
+			fmt.Println("Debug: .describeignore not found, creating one with default entry .git/")
+		}
+		err := os.WriteFile(ignorePath, []byte(".git/\n"), 0644)
+		if err != nil {
+			fmt.Println("Error creating .describeignore:", err)
+			os.Exit(1)
+		}
+	}
+}
+
 // Reads the ignore file and returns a matcher
 func loadIgnoreFile(ignorePath string) *ignore.GitIgnore {
 	data, err := os.ReadFile(ignorePath)
 	if err != nil {
-		fmt.Println("Ignore file not found, proceeding without exclusions.")
+		fmt.Println("Error reading ignore file, proceeding without exclusions.")
 		return ignore.CompileIgnoreLines()
 	}
+
 	lines := strings.Split(string(data), "\n")
+	if debug {
+		fmt.Println("Debug: Loaded ignore patterns:", lines)
+	}
+
 	return ignore.CompileIgnoreLines(lines...)
 }
 
@@ -81,6 +105,9 @@ func getFilesAndStructure(root string, matcher *ignore.GitIgnore) ([]string, str
 
 		relPath, _ := filepath.Rel(root, path)
 		if relPath == "." || matcher.MatchesPath(relPath) {
+			if debug {
+				fmt.Println("Debug: Ignoring", relPath)
+			}
 			return nil
 		}
 
