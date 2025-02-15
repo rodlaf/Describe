@@ -2,12 +2,14 @@
 
 All notable changes to this project will be documented in this file. See https://keepachangelog.com/en/1.1.0/.
 
-## [Unreleased]
+## [UNRELEASED]
 ### Added
-- Add goreleaser to workflow
 
 ### Fixed
 
+### Changed
+
+## [1.0.3] 2025-2-24
 ### Changed
 - Document binary installation in README
 - Make goreleaser create homebrew tap
