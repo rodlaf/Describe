@@ -1,8 +1,15 @@
 # Changelog
 
-All notable changes to this project will be documented in this file.
+All notable changes to this project will be documented in this file. See https://keepachangelog.com/en/1.1.0/.
 
 ## [Unreleased]
+### Added
+
+### Fixed
+
+### Changed
+
+## [1.0.1] - 2025-2-24
 ### Added
 - Introduced a `-debug` flag to print debug statements for troubleshooting.
 - Automatically creates `.describeignore` if it does not exist, initializing it with `.git/` as a default entry.

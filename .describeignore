@@ -36,7 +36,8 @@ codebase.md
 
 # Describe only
 .git/
-README.md
 CHANGELOG.md
+CONTRIBUTING.md
+LICENSE.md
 .describeignore
 .gitignore
