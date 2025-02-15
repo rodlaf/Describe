@@ -10,6 +10,10 @@ All notable changes to this project will be documented in this file. See https:/
 
 ### Changed
 
+## [1.0.2] - 2025-2-24
+### Added
+- Add goreleaser to workflow
+
 ## [1.0.1] - 2025-2-24
 ### Added
 - Introduced a `-debug` flag to print debug statements for troubleshooting.
