@@ -4,6 +4,7 @@ All notable changes to this project will be documented in this file. See https:/
 
 ## [Unreleased]
 ### Added
+- Add goreleaser to workflow
 
 ### Fixed
 
