@@ -1,0 +1,32 @@
+# Binary files
+/describe
+
+# Build artifacts
+*.exe
+*.out
+*.test
+
+# Go modules
+go.mod
+go.sum
+
+# Dependency directories
+/vendor/
+
+# Compiled object files
+*.o
+*.a
+*.so
+
+# Logs and debug
+*.log
+*.tmp
+*.swp
+*.bak
+
+# IDE / Editor files
+.vscode/
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
