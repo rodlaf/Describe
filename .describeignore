@@ -37,3 +37,6 @@ codebase.md
 # Describe only
 .git/
 README.md
+CHANGELOG.md
+.describeignore
+.gitignore

@@ -7,6 +7,8 @@ All notable changes to this project will be documented in this file.
 - Introduced a `-debug` flag to print debug statements for troubleshooting.
 - Automatically creates `.describeignore` if it does not exist, initializing it with `.git/` as a default entry.
 - Debug mode now prints which files are ignored.
+- CONTRIBUTING.md added.
+- MIT License added.
 
 ### Fixed
 - Resolved issue where `.DS_Store` was being included despite being ignored.
