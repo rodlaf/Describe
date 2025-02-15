@@ -6,32 +6,34 @@
 
 ## **Installation Guide (for Non-Go Users)**
 
-### **1. Install Go (If Not Already Installed)**
-If you don’t have Go installed, download and install it from:  
-➡️ [Go Official Website](https://go.dev/dl/)
+### **Option 1: Download Executable (Recommended)**
+If you don't have Go installed, you can download a precompiled binary:
 
-After installing, verify your Go installation by running:
-```sh
-go version
-```
-You should see something like:
-```sh
-go version go1.23.0 darwin/amd64
-```
+1. Visit the [Releases](https://github.com/yourusername/describe/releases) page.
+2. Download the correct binary for your system:
+   - macOS (Apple Silicon): `describe-macos-arm64.tar.gz`
+   - macOS (Intel): `describe-macos-amd64.tar.gz`
+   - Linux (x86_64): `describe-linux-amd64.tar.gz`
+   - Linux (ARM64): `describe-linux-arm64.tar.gz`
+3. Extract and move it to `/usr/local/bin`:
+   ```sh
+   tar -xvzf describe-macos-arm64.tar.gz
+   mv describe /usr/local/bin/
+   chmod +x /usr/local/bin/describe
+   ```
+4. Run:
+   ```sh
+   describe --help
+   ```
 
----
-
-### **2. Install Describe Using `go install`**
-Run the following command to install `describe`:
+### **Option 2: Install with Go**
+If you already have Go 1.23+ installed, you can install `describe` with:
 ```sh
-go install github.com/rodlaf/describe@latest
+go install github.com/yourusername/describe@latest
 ```
 
 This will install `describe` in Go’s **bin directory** (e.g., `$HOME/go/bin/describe`).
 
----
-
-### **3. Add Go Bin Directory to PATH (If Needed)**  
 If you get a "command not found" error after running `describe`, add Go’s bin directory to your system’s **PATH**.
 
 #### **For macOS/Linux**
@@ -45,14 +47,14 @@ source ~/.zshrc  # or source ~/.bashrc
 ```
 
 #### **For Windows**
-Add `%USERPROFILE%\goin` to your **System Environment Variables**:
+Add `%USERPROFILE%\go\bin` to your **System Environment Variables**:
 1. Open **Control Panel** → **System** → **Advanced system settings**.
 2. Click **Environment Variables**.
 3. Under **System variables**, find **Path**, then click **Edit**.
 4. Add `C:\Users\YourUsername\go\bin` (Replace `YourUsername`).
 5. Click **OK**, restart your terminal, and run:
    ```sh
-   describe -help
+   describe --help
    ```
 
 Now `describe` should work globally! 🎉
@@ -60,7 +62,6 @@ Now `describe` should work globally! 🎉
 ---
 
 ## **Usage**
-After installing, use `describe` like this:
 
 ### **Basic Usage**
 ```sh
@@ -84,7 +85,7 @@ describe <input-directory> -ignore .gitignore
 
 ### **Help**
 ```sh
-describe -help
+describe --help
 ```
 
 ---
@@ -107,4 +108,10 @@ build/
 - **Folder names** exclude whole directories.
 - **Specific file names** can be ignored.
 
-If `.describeignore` is **missing**, all files will be included.
+If `.describeignore` is **missing**, one will be created automatically with `.git/` as a default entry.
+
+---
+
+## **License**
+This project is licensed under the [MIT License](LICENSE.md).
+

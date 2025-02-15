@@ -9,6 +9,7 @@ All notable changes to this project will be documented in this file. See https:/
 ### Fixed
 
 ### Changed
+- Document binary installation in README
 
 ## [1.0.2] - 2025-2-24
 ### Added
