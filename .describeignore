@@ -34,6 +34,9 @@ Thumbs.db
 # Describe
 codebase.md
 
+# Added by goreleaser init:
+dist/
+
 # Describe only
 .git/
 CHANGELOG.md

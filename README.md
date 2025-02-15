@@ -4,12 +4,20 @@
 
 ---
 
-## **Installation Guide (for Non-Go Users)**
+## **Installation Guide**
 
-### **Option 1: Download Executable (Recommended)**
+### **Option 1: Install via Homebrew (Recommended)**
+If you use Homebrew, you can install `describe` with:
+```sh
+brew tap rodlaf/describe
+brew install describe
+```
+Homebrew will automatically select the correct binary based on your system architecture (Apple Silicon or Intel).
+
+### **Option 2: Download Executable**
 If you don't have Go installed, you can download a precompiled binary:
 
-1. Visit the [Releases](https://github.com/yourusername/describe/releases) page.
+1. Visit the [Releases](https://github.com/rodlaf/describe/releases) page.
 2. Download the correct binary for your system:
    - macOS (Apple Silicon): `describe-macos-arm64.tar.gz`
    - macOS (Intel): `describe-macos-amd64.tar.gz`
@@ -26,10 +34,10 @@ If you don't have Go installed, you can download a precompiled binary:
    describe --help
    ```
 
-### **Option 2: Install with Go**
+### **Option 3: Install with Go**
 If you already have Go 1.23+ installed, you can install `describe` with:
 ```sh
-go install github.com/yourusername/describe@latest
+go install github.com/rodlaf/describe@latest
 ```
 
 This will install `describe` in Go’s **bin directory** (e.g., `$HOME/go/bin/describe`).
@@ -114,4 +122,3 @@ If `.describeignore` is **missing**, one will be created automatically with `.gi
 
 ## **License**
 This project is licensed under the [MIT License](LICENSE.md).
-

@@ -33,5 +33,6 @@ Thumbs.db
 
 # Describe
 codebase.md
+
 # Added by goreleaser init:
 dist/
