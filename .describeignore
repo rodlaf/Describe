@@ -1,46 +1,7 @@
-# Binary files
-/describe
-
-# Build artifacts
-*.exe
-*.out
-*.test
-
-# Go modules
-go.mod
-go.sum
-
-# Dependency directories
-/vendor/
-
-# Compiled object files
-*.o
-*.a
-*.so
-
-# Logs and debug
-*.log
-*.tmp
-*.swp
-*.bak
-
-# IDE / Editor files
-.vscode/
-.idea/
-*.iml
-.DS_Store
-Thumbs.db
-
-# Describe
-codebase.md
-
-# Added by goreleaser init:
-dist/
-
-# Describe only
 .git/
 CHANGELOG.md
 CONTRIBUTING.md
 LICENSE.md
-.describeignore
-.gitignore
+
+.goreleaser.yaml
+README.md

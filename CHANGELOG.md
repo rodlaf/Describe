@@ -2,12 +2,26 @@
 
 All notable changes to this project will be documented in this file. See https://keepachangelog.com/en/1.1.0/.
 
-## [UNRELEASED]
-### Added
+## [UNRELEASED] 
+### Added 
 
-### Fixed
+### Fixed 
 
 ### Changed
+
+
+## [1.0.4] 2025-4-18 
+### Added 
+- Support for .describeignore and .gitignore as comma-separated ignore sources.
+     
+### Fixed 
+- Ignored directories (.git/, dist/) now fully excluded from structure and file list.
+- Prevented inclusion of .describeignore when it's in the scanned directory.
+- Fixed issue where structure section still listed ignored folders.
+
+### Changed 
+- Output file (codebase.md) is now explicitly deleted before writing.
+- Ignore file paths are resolved relative to the inputDir.
 
 ## [1.0.3] 2025-2-24
 ### Changed
