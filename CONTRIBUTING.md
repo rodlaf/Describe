@@ -13,10 +13,16 @@ Create a new branch for your feature or bug fix:
  git checkout -b feature-branch
 ```
 
-### 3. Make Changes
+### 3. Make Changes and Run Code
 Implement your changes and commit them with a meaningful commit message:
 ```sh
  git commit -m "Add new feature or fix bug"
+```
+
+Then run the script:
+
+```sh
+go run main.go [flags] . 
 ```
 
 ### 4. Run Tests (if applicable)
